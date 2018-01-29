@@ -1,10 +1,7 @@
 let sumOrder2: (price: number, quantity?: number) => number;
 
-sumOrder2 = (x, y) => {
-  if (y) {
-    return x * y;
-  }
-  return x;
+sumOrder2 = (x, y = 1) => {
+  return x * y;
 };
 
 const sum2 = sumOrder2(25);
