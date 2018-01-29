@@ -1,4 +1,4 @@
-class Sizes {
+abstract class Sizes {
   constructor(public sizez: string[]){}
 
   set availableSizes(sizes: string[]) {
@@ -10,7 +10,10 @@ class Sizes {
   }
 }
 
+// Solo se puede instanciar mediante una extensión de la calse
+new Sizes(['small']);
 
+// Solo se puede instanciar de esta manera
 class Pizza extends Sizes{
 
   public toppings: string[] = [];
