@@ -1,11 +1,9 @@
-const pizzas: number = 2;
+let pizzaSize: string = 'small';
 
-function offerDiscount(orders: number): boolean {
-  return orders >= 3;
+function selectSize (size: 'small' | 'medium' | 'large'): void {
+  pizzaSize = size;
 }
 
-if (offerDiscount(pizzas)) {
-  console.log(`You're entitled to a discount!`);
-} else {
-  console.log(`Order more than 3 pizzas for a discount`);
-}
+selectSize('medium');
+
+console.log(`Pizza size : ${pizzaSize}`);
