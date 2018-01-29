@@ -1,18 +1,18 @@
 interface Pizza {
   name: string;
   sizes: string[];
+  getAvailableSizez(): string[];
 };
-
-interface Pizzas {
-  data: Pizza[]
-}
 
 let pizza: Pizza;
 
 function createPizza(name: string, sizes: string[]): Pizza {
   return {
     name,
-    sizes
+    sizes,
+    getAvailableSizez() {
+      return this.sizes
+    }
   };
 }
 
