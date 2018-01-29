@@ -1,18 +1,13 @@
-type Pizza = {name: string, toppings: number};
+enum Sizes {
+  Small,
+  Medium,
+  Large
+};
 
-const pizza: Pizza = { name: 'Blazing Inferno', toppings: 5};
-
-const serialized = JSON.stringify(pizza);
-
-// function getNameFromJSON(obj: string) {
-//   return (<Pizza>JSON.parse(obj)).name;
-// }
-
-// New TypeScript version
-function getNameFromJSON(obj: string) {
-  return (JSON.parse(obj) as Pizza).name;
+enum Sizes {
+  Extralarge = 3,
 }
 
+const selectedSize = 2;
 
-getNameFromJSON(serialized);
-
+console.log(Sizes[selectedSize]);
