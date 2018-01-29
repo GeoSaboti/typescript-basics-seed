@@ -1,4 +1,8 @@
-abstract class Sizes {
+interface SizesInterface {
+  availableSizes: string[];
+}
+
+abstract class Sizes implements SizesInterface {
   constructor(protected sizes: string[]){}
 
   set availableSizes(sizes: string[]) {
@@ -10,11 +14,14 @@ abstract class Sizes {
   }
 }
 
-// Solo se puede instanciar mediante una extensión de la calse
-// new Sizes(['small']);
+interface PizzaInterface extends SizesInterface {
+  readonly name: string;
+  toppings: string[];
+  updateSizes(sizes: string[]): void;
+  addTopping(topping: string): void;
+}
 
-// Solo se puede instanciar de esta manera
-class Pizza extends Sizes{
+class Pizza extends Sizes implements PizzaInterface{
 
   public toppings: string[] = [];
 
