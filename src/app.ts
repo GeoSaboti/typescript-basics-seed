@@ -1,7 +1,3 @@
-let sizez: string[];
+let pizza: [string, number, boolean];
 
-sizez = ['small', 'medium', 'large'];
-
-let toppings: Array<string>;
-
-toppings = ['pepperoni', 'tomato', 'bacon'];
+pizza = ['Pepperoni', 20, true];
