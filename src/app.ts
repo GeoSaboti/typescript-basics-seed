@@ -1,13 +1,29 @@
-const date = Date.now();
+class Pizza {
+  constructor(private name: string, private price: number) {
 
-console.log(date);
+  }
+}
+class List<T> {
+  private list: T[];
 
-class Coupon {
-  static allowed = ['Pepperoni', 'Blazing Inferno'];
-  static create(percentage: number) {
-    return `PIZZA_RESTAURANT-${percentage}`;
+  addItem(item: T): void {
+    this.list.push(item);
+  }
+
+  getList(): T[] {
+    return this.list;
   }
 }
 
-Coupon.allowed.push('Margaritha');
-Coupon.create(25);
+const list = new List<Pizza>();
+
+list.addItem(new Pizza('Pepperoni', 15));
+
+const pizzas: Pizza[] = list.getList();
+
+class Coupon {
+  constructor(private name: string) {}
+}
+
+const anotherList = new List<Coupon>();
+anotherList.addItem(new Coupon('PIZZA25'));
